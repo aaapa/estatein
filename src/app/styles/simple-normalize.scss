@@ -1,0 +1,56 @@
+[class] {
+  margin: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+input {
+  color: inherit;
+  font: inherit;
+}
+
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+button:disabled {
+  cursor: default;
+}

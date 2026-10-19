@@ -1,0 +1,343 @@
+.clients {
+  padding-block-start: ptrm(150);
+  padding-block-end: ptrm(150);
+  display: flex;
+  justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(836.8);
+
+  &__slider {
+    min-inline-size: 0;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(50);
+
+    .simplebar-content-wrapper {
+      cursor: grab;
+      touch-action: pan-y pinch-zoom;
+    }
+
+    &--dragging .simplebar-content-wrapper {
+      cursor: grabbing;
+      user-select: none;
+    }
+  }
+
+  &__slider-slides {
+    position: relative;
+    display: flex;
+    gap: ptrm(30);
+    align-items: stretch;
+  }
+
+  &__slider-slide {
+    min-inline-size: 0;
+    display: flex;
+    flex: 0 0 calc((100% - ptrm(60)) / 3);
+
+    > article {
+      min-inline-size: 0;
+      flex: 1;
+    }
+  }
+
+  &__slider-controls {
+    padding-block-start: ptrm(20);
+    display: flex;
+    gap: ptrm(16);
+    align-items: center;
+    justify-content: space-between;
+    border-block-start: ptrm(1) solid var(--color-border);
+  }
+
+  &__slider-position {
+    color: var(--color-muted);
+    font-size: ptrm(20);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__slider-position-current {
+    color: var(--color-text);
+  }
+
+  &__slider-actions {
+    display: flex;
+    gap: ptrm(10);
+    align-items: center;
+  }
+
+  &__slider-action {
+    display: flex;
+
+    &--position {
+      display: none;
+    }
+  }
+
+  &__slider-previous-button {
+    inline-size: ptrm(58);
+    block-size: ptrm(58);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: ptrm(1) solid var(--color-border);
+    border-radius: 50%;
+    @include trns;
+
+    @include hover {
+      border-color: var(--color-focus);
+      background-color: var(--color-main);
+    }
+
+    &:active {
+      background-color: var(--color-main-active);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    &:focus-visible {
+      outline-offset: ptrm(-4);
+    }
+
+    @include laptop {
+      inline-size: ptrm(44);
+      block-size: ptrm(44);
+    }
+  }
+
+  &__slider-next-button {
+    inline-size: ptrm(58);
+    block-size: ptrm(58);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: ptrm(1) solid var(--color-border);
+    border-radius: 50%;
+    @include trns;
+
+    background-color: var(--color-background-secondary);
+
+    @include hover {
+      border-color: var(--color-focus);
+      background-color: var(--color-main);
+    }
+
+    &:active {
+      background-color: var(--color-main-active);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    &:focus-visible {
+      outline-offset: ptrm(-4);
+    }
+
+    @include laptop {
+      inline-size: ptrm(44);
+      block-size: ptrm(44);
+    }
+  }
+
+  &__slider-all-button {
+    min-block-size: ptrm(49);
+    padding-block: ptrm(12);
+    padding-inline: ptrm(16);
+    display: none;
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(8);
+    font-size: ptrm(14);
+    @include trns;
+    background-color: var(--color-background-secondary);
+
+    @include hover {
+      border-color: var(--color-focus);
+    }
+
+    &:active {
+      background-color: var(--color-main);
+    }
+  }
+
+  @include laptop {
+    &__slider {
+      gap: ptrm(40);
+    }
+
+    &__slider-slides {
+      gap: ptrm(20);
+    }
+
+    &__slider-slide {
+      flex-basis: calc((100% - ptrm(40)) / 3);
+    }
+
+    &__slider-position {
+      font-size: ptrm(16);
+    }
+  }
+
+  @include tablet {
+    &__slider-slide {
+      flex-basis: calc((100% - ptrm(20)) / 2);
+    }
+  }
+
+  @include mobile {
+    &__slider {
+      gap: ptrm(30);
+    }
+
+    &__slider-slide {
+      flex-basis: 100%;
+    }
+
+    &__slider-controls {
+      padding-block-start: ptrm(16);
+      gap: ptrm(8);
+    }
+
+    &__slider-position {
+      position: absolute;
+      inline-size: ptrm(1);
+      block-size: ptrm(1);
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+
+    &__slider-all-button {
+      display: block;
+    }
+
+    &__slider-actions {
+      gap: ptrm(8);
+    }
+
+    &__slider-action--position {
+      display: flex;
+    }
+
+    &__slider-mobile-position {
+      color: var(--color-muted);
+      font-size: ptrm(12);
+      white-space: nowrap;
+    }
+  }
+
+  @include mobile-s {
+    &__slider-all-button {
+      padding-inline: ptrm(10);
+      font-size: ptrm(12);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(80);
+
+    @include laptop {
+      gap: ptrm(60);
+    }
+
+    @include mobile {
+      gap: ptrm(40);
+    }
+  }
+
+  &__heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(14);
+    padding-inline-end: ptrm(300);
+
+    @include laptop {
+      gap: ptrm(10);
+    }
+
+    @include mobile {
+      gap: ptrm(8);
+    }
+  }
+
+  &__stars {
+    position: absolute;
+    inset-block-start: ptrm(-40);
+    inset-inline-start: ptrm(-20);
+
+    @include laptop {
+      zoom: 0.8;
+    }
+
+    @include mobile {
+      inset-block-start: ptrm(-28);
+      inset-inline-start: ptrm(-10);
+      zoom: 0.67;
+    }
+  }
+
+  &__description {
+    color: var(--color-muted);
+  }
+
+  &__slider-slides {
+    padding-block: ptrm(8);
+    padding-inline: ptrm(8);
+    gap: ptrm(50);
+  }
+
+  &__slider-slide {
+    flex-basis: calc((100% - ptrm(50)) / 2);
+  }
+
+  @include laptop {
+    padding-block-start: ptrm(120);
+    padding-block-end: ptrm(120);
+    contain-intrinsic-size: auto ptrm(738.8);
+
+    &__heading {
+      padding-inline-end: ptrm(150);
+    }
+
+    &__slider-slides {
+      gap: ptrm(40);
+    }
+
+    &__slider-slide {
+      flex-basis: calc((100% - ptrm(40)) / 2);
+    }
+  }
+
+  @include tablet {
+    contain-intrinsic-size: auto ptrm(778.2);
+
+    &__heading {
+      padding-inline-end: 0;
+    }
+  }
+
+  @include mobile {
+    padding-block-start: ptrm(80);
+    padding-block-end: ptrm(80);
+    contain-intrinsic-size: auto ptrm(750.8);
+
+    &__slider-slide {
+      flex-basis: 100%;
+    }
+
+    &__slider-actions {
+      inline-size: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  @include mobile-s {
+    contain-intrinsic-size: auto ptrm(771.8);
+  }
+}

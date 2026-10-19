@@ -1,0 +1,177 @@
+.apartments-card {
+  padding-block: ptrm(40);
+  padding-inline: ptrm(40);
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(30);
+  border: ptrm(1) solid var(--color-border);
+  border-radius: ptrm(12);
+
+  &__image {
+    width: 100%;
+    height: ptrm(318);
+    border-radius: ptrm(10);
+    object-fit: cover;
+  }
+
+  &__information {
+    min-width: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: ptrm(20);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(6);
+  }
+
+  &__description {
+    color: var(--color-muted);
+    font-size: ptrm(18);
+  }
+
+  &__category {
+    align-self: flex-start;
+    padding-block: ptrm(8);
+    padding-inline: ptrm(14);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(28);
+    font-size: ptrm(18);
+    background-color: var(--color-background-secondary);
+  }
+
+  &__read-button {
+    color: var(--color-text);
+    display: inline;
+    text-decoration: underline;
+    text-underline-offset: ptrm(3);
+    @include trns;
+
+    @include hover {
+      color: var(--color-focus);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: ptrm(8);
+
+    &-item {
+      padding-block: ptrm(7);
+      padding-inline: ptrm(12);
+      display: flex;
+      gap: ptrm(4);
+      align-items: center;
+      border: ptrm(1) solid var(--color-border);
+      border-radius: ptrm(28);
+      font-size: ptrm(16);
+      white-space: nowrap;
+      background-color: var(--color-background-secondary);
+    }
+  }
+
+  &__feature-icon {
+    width: ptrm(24);
+    height: ptrm(24);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__purchase {
+    display: flex;
+    gap: ptrm(30);
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(2);
+
+    &-label {
+      color: var(--color-muted);
+    }
+
+    &-value {
+      font-size: ptrm(24);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  &__details-button {
+    flex: 1;
+  }
+
+  @include laptop {
+    padding-block: ptrm(30);
+    padding-inline: ptrm(30);
+    gap: ptrm(20);
+
+    &__image {
+      height: ptrm(255);
+    }
+
+    &__information {
+      gap: ptrm(16);
+    }
+
+    &__category {
+      font-size: ptrm(14);
+      padding-inline: ptrm(12);
+    }
+
+    &__description {
+      font-size: ptrm(16);
+    }
+
+    &__features {
+      gap: ptrm(6);
+
+      &-item {
+        padding-block: ptrm(6);
+        padding-inline: ptrm(10);
+        font-size: ptrm(13);
+      }
+    }
+
+    &__purchase {
+      gap: ptrm(20);
+    }
+
+    &__price-value {
+      font-size: ptrm(20);
+    }
+  }
+
+  @include mobile {
+    padding-block: ptrm(24);
+    padding-inline: ptrm(24);
+
+    &__image {
+      height: ptrm(210);
+    }
+
+    &__description {
+      font-size: ptrm(14);
+    }
+
+    &__features-item {
+      font-size: ptrm(13);
+    }
+
+    &__purchase {
+      gap: ptrm(12);
+    }
+  }
+}

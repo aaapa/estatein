@@ -1,0 +1,239 @@
+.offices {
+  padding-block-start: ptrm(150);
+  display: flex;
+  justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(775.8);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(80);
+    min-inline-size: 0;
+  }
+
+  &__heading {
+    padding-inline-end: ptrm(300);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(14);
+  }
+
+  &__stars {
+    position: absolute;
+    inset-block-start: ptrm(-40);
+    inset-inline-start: ptrm(-20);
+  }
+
+  &__description {
+    font-size: ptrm(18);
+    color: var(--color-muted);
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(50);
+  }
+
+  &__filters {
+    inline-size: min(100%, ptrm(516));
+    align-self: flex-start;
+    padding-block: ptrm(10);
+    padding-inline: ptrm(10);
+    display: flex;
+    gap: ptrm(10);
+    border-radius: ptrm(12);
+    background-color: var(--color-background-secondary);
+  }
+
+  &__filter {
+    min-inline-size: 0;
+    flex: 1;
+  }
+
+  &__filter-button {
+    block-size: 100%;
+    inline-size: 100%;
+    padding-block: ptrm(18);
+    padding-inline: ptrm(16);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(10);
+    font-size: ptrm(18);
+    @include trns;
+
+    @include hover {
+      color: var(--color-focus);
+      border-color: var(--color-focus);
+    }
+
+    &:active {
+      color: var(--color-text);
+      border-color: var(--color-main);
+      background-color: alpha(var(--color-main), 0.2, var(--color-background-secondary));
+    }
+
+    &:focus-visible {
+      outline-offset: ptrm(-3);
+    }
+
+    &--active {
+      border-color: var(--color-border);
+      background-color: var(--color-page);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: ptrm(30);
+  }
+
+  &__item {
+    min-inline-size: 0;
+    padding-block: ptrm(50);
+    padding-inline: ptrm(50);
+    display: flex;
+    flex: 0 0 calc((100% - ptrm(30)) / 2);
+    flex-direction: column;
+    gap: ptrm(24);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(12);
+  }
+
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: ptrm(10);
+  }
+
+  &__detail {
+    min-inline-size: 0;
+  }
+
+  &__detail-link {
+    padding-block: ptrm(12);
+    padding-inline: ptrm(16);
+    display: flex;
+    align-items: center;
+    gap: ptrm(6);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(30);
+    font-size: ptrm(14);
+    background-color: var(--color-background-secondary);
+    @include trns;
+
+    &[href] {
+      @include hover {
+        color: var(--color-focus);
+        border-color: var(--color-main);
+      }
+
+      &:active {
+        color: var(--color-main);
+      }
+    }
+  }
+
+  @include laptop {
+    padding-block-start: ptrm(120);
+    contain-intrinsic-size: auto ptrm(672.8);
+
+    &__inner {
+      gap: ptrm(60);
+    }
+
+    &__item {
+      padding-block: ptrm(40);
+      padding-inline: ptrm(40);
+      gap: ptrm(20);
+    }
+
+    &__information {
+      gap: ptrm(40);
+    }
+
+    &__heading {
+      padding-inline-end: ptrm(200);
+    }
+
+    &__filters {
+      inline-size: min(100%, ptrm(413));
+    }
+
+    &__filter-button {
+      padding-block: ptrm(14);
+      padding-inline: ptrm(12);
+      font-size: ptrm(14);
+    }
+
+    &__description {
+      font-size: ptrm(16);
+    }
+  }
+
+  @include tablet {
+    contain-intrinsic-size: auto ptrm(1029);
+
+    &__item {
+      flex-basis: 100%;
+    }
+
+    &__heading {
+      padding-inline-end: 0;
+    }
+  }
+
+  @include mobile {
+    padding-block-start: ptrm(80);
+    contain-intrinsic-size: auto ptrm(1317.4);
+
+    &__inner {
+      gap: ptrm(40);
+    }
+
+    &__heading {
+      gap: ptrm(8);
+    }
+
+    &__stars {
+      inset-block-start: ptrm(-28);
+      inset-inline-start: ptrm(-10);
+      zoom: 0.67;
+    }
+
+    &__item {
+      padding-block: ptrm(24);
+      padding-inline: ptrm(24);
+      gap: ptrm(16);
+    }
+
+    &__filters {
+      inline-size: 100%;
+      gap: ptrm(6);
+      padding-block: ptrm(6);
+      padding-inline: ptrm(6);
+    }
+
+    &__filter-button {
+      padding-block: ptrm(12);
+      padding-inline: ptrm(6);
+      font-size: ptrm(12);
+    }
+
+    &__detail-link {
+      padding-block: ptrm(10);
+      padding-inline: ptrm(12);
+      font-size: ptrm(12);
+    }
+
+    &__description {
+      font-size: ptrm(14);
+    }
+  }
+
+  @include mobile-s {
+    contain-intrinsic-size: auto ptrm(1301.4);
+  }
+}

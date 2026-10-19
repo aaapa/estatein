@@ -1,0 +1,33 @@
+@use "@/shared/lib/styles" as *;
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark: #141414;
+  --color-dark-alt: #1a1a1a;
+  --color-gray: #262626;
+  --color-gray-dark: #4d4d4d;
+  --color-gray-light: #999999;
+  --color-purple: #703bf7;
+  --color-purple-light: #8254fa;
+  --color-purple-pale: #b99aff;
+  --color-purple-dark: #5725d1;
+  --color-red: #ef4444;
+  --color-yellow: #ffe600;
+  --color-main: var(--color-purple);
+  --color-main-hover: var(--color-purple-light);
+  --color-main-active: var(--color-purple-dark);
+  --color-text: var(--color-white);
+  --color-muted: var(--color-gray-light);
+  --color-page: var(--color-dark);
+  --color-background-secondary: var(--color-dark-alt);
+  --color-border: var(--color-gray);
+  --color-focus: var(--color-purple-pale);
+  --color-danger: var(--color-red);
+  --container-width: #{ptrm(1596)};
+  --container-padding: #{ptrm(80)};
+
+  @include mobile {
+    --container-padding: #{ptrm(16)};
+  }
+}

@@ -1,0 +1,47 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(20);
+
+  &__group {
+    min-inline-size: 0;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(16);
+  }
+
+  &__legend {
+    padding-block-end: ptrm(16);
+    font-weight: 600;
+  }
+
+  &__field {
+    min-inline-size: 0;
+  }
+
+  &__note {
+    color: var(--color-muted);
+    font-size: ptrm(14);
+  }
+
+  &__required,
+  &__error {
+    color: var(--color-danger);
+  }
+
+  &__error {
+    font-size: ptrm(14);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  &__description {
+    color: var(--color-muted);
+    font-size: ptrm(14);
+  }
+
+  &__status {
+    color: var(--color-focus);
+    font-size: ptrm(14);
+  }
+}

@@ -1,0 +1,108 @@
+.subscription {
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(12);
+
+  &__form {
+    padding-block: ptrm(10);
+    padding-inline: ptrm(18);
+    display: flex;
+    gap: ptrm(10);
+    align-items: center;
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(12);
+
+    &:focus-within,
+    &:has(.custom-field--focused) {
+      border-color: var(--color-focus);
+      box-shadow: inset 0 0 0 ptrm(1) var(--color-focus);
+    }
+
+    &:has([aria-invalid="true"]) {
+      border-color: var(--color-danger);
+      box-shadow: inset 0 0 0 ptrm(1) var(--color-danger);
+    }
+  }
+
+  &__field {
+    --field-background: var(--color-page);
+    min-inline-size: 0;
+    flex: 1;
+  }
+
+  &__label {
+    max-inline-size: 100%;
+    inset-inline-start: 0;
+  }
+
+  &__input {
+    min-inline-size: 0;
+    min-block-size: ptrm(40);
+    inline-size: 100%;
+    padding-inline: 0;
+    border: none;
+    font-size: ptrm(16);
+    background-color: transparent;
+
+    &:focus-visible,
+    .custom-field--focused & {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:is(:autofill, :-webkit-autofill):focus-visible,
+    .custom-field--focused &:is(:autofill, :-webkit-autofill) {
+      box-shadow: inset 0 0 0 ptrm(1000) var(--field-background);
+    }
+
+    &[aria-invalid="true"] {
+      box-shadow: none;
+
+      &:is(:autofill, :-webkit-autofill) {
+        box-shadow: inset 0 0 0 ptrm(1000) var(--field-background);
+      }
+    }
+  }
+
+  &__submit-button {
+    inline-size: ptrm(40);
+    block-size: ptrm(40);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    justify-content: center;
+    border-radius: ptrm(6);
+    @include trns;
+
+    @include hover {
+      background-color: var(--color-main);
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__status,
+  &__note {
+    color: var(--color-muted);
+    font-size: ptrm(12);
+  }
+
+  &__required,
+  &__error {
+    color: var(--color-danger);
+  }
+
+  &__error {
+    font-size: ptrm(14);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  @include laptop {
+    &__input {
+      font-size: ptrm(14);
+    }
+  }
+}

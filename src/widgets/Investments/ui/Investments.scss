@@ -1,0 +1,148 @@
+.investments {
+  padding-block-end: ptrm(150);
+  padding-block-start: ptrm(150);
+  display: flex;
+  justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(648.6);
+
+  &__inner {
+    display: flex;
+    min-inline-size: 0;
+    flex-direction: row;
+    align-items: stretch;
+    gap: ptrm(60);
+  }
+
+  &__heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(14);
+  }
+
+  &__stars {
+    position: absolute;
+    inset-block-start: ptrm(-40);
+    inset-inline-start: ptrm(-20);
+  }
+
+  &__description {
+    font-size: ptrm(18);
+    color: var(--color-muted);
+  }
+
+  &__information {
+    min-inline-size: 0;
+    display: flex;
+    flex: 0 1 ptrm(520);
+    flex-direction: column;
+    gap: ptrm(50);
+  }
+
+  &__offer {
+    padding-block: ptrm(50);
+    padding-inline: ptrm(50);
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(30);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(12);
+    background: var(--color-background-secondary) url("/images/investments/investments-background.webp") center / cover;
+  }
+
+  &__list {
+    min-inline-size: 0;
+    padding-block: ptrm(10);
+    padding-inline: ptrm(10);
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: ptrm(10);
+    border-radius: ptrm(12);
+    background-color: var(--color-background-secondary);
+  }
+
+  &__item {
+    min-inline-size: 0;
+    flex: 0 0 calc((100% - ptrm(10)) / 2);
+  }
+
+  @include laptop {
+    padding-block-end: ptrm(120);
+    padding-block-start: ptrm(120);
+    contain-intrinsic-size: auto ptrm(515.6);
+
+    &__inner {
+      gap: ptrm(40);
+    }
+
+    &__information {
+      flex-basis: 32%;
+      gap: ptrm(30);
+    }
+
+    &__offer {
+      padding-block: ptrm(30);
+      padding-inline: ptrm(30);
+      gap: ptrm(20);
+    }
+
+    &__description {
+      font-size: ptrm(16);
+    }
+  }
+
+  @include tablet {
+    contain-intrinsic-size: auto ptrm(837);
+
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__information {
+      flex-basis: auto;
+    }
+  }
+
+  @include mobile {
+    padding-block-end: ptrm(80);
+    padding-block-start: ptrm(80);
+    contain-intrinsic-size: auto ptrm(1159.4);
+
+    &__inner {
+      gap: ptrm(40);
+    }
+
+    &__heading {
+      gap: ptrm(8);
+    }
+
+    &__stars {
+      inset-block-start: ptrm(-28);
+      inset-inline-start: ptrm(-10);
+      zoom: 0.67;
+    }
+
+    &__offer {
+      padding-block: ptrm(24);
+      padding-inline: ptrm(24);
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      flex-basis: auto;
+    }
+
+    &__description {
+      font-size: ptrm(14);
+    }
+  }
+
+  @include mobile-s {
+    contain-intrinsic-size: auto ptrm(1312.4);
+  }
+}

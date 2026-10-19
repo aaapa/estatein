@@ -1,0 +1,255 @@
+.inquiry-form {
+  min-inline-size: 0;
+  padding-block: ptrm(100);
+  padding-inline: ptrm(100);
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(50);
+  border: ptrm(1) solid var(--color-border);
+  border-radius: ptrm(12);
+
+  &__group {
+    min-inline-size: 0;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(24);
+  }
+
+  &__legend {
+    padding-block-end: ptrm(24);
+    font-size: ptrm(20);
+    font-weight: 600;
+  }
+
+  &__note {
+    color: var(--color-muted);
+    font-size: ptrm(14);
+  }
+
+  &__required,
+  &__error {
+    color: var(--color-danger);
+  }
+
+  &__error {
+    display: block;
+    font-size: ptrm(14);
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+
+  &__fields {
+    min-inline-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: ptrm(30);
+  }
+
+  &__field {
+    min-inline-size: 0;
+    flex: 1 1 calc((100% - ptrm(90)) / 4);
+
+    &--wide {
+      flex-basis: calc((100% - ptrm(30)) / 2);
+    }
+  }
+
+  &__contact-method {
+    min-inline-size: 0;
+    display: flex;
+    flex: 1 1 calc((100% - ptrm(30)) / 2);
+    gap: ptrm(24);
+    align-items: center;
+  }
+
+  &__contact-legend {
+    color: var(--color-muted);
+    padding-block-end: ptrm(12);
+    font-size: ptrm(14);
+  }
+
+  &__radio-label {
+    min-inline-size: 0;
+    min-block-size: ptrm(54);
+    padding-block: ptrm(12);
+    padding-inline: ptrm(16);
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: ptrm(8);
+    cursor: pointer;
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(8);
+    background-color: var(--color-background-secondary);
+    @include trns;
+
+    &:has(.inquiry-form__radio:checked) {
+      border-color: var(--color-main);
+    }
+
+    @include hover {
+      border-color: var(--color-focus);
+    }
+  }
+
+  &__radio-text {
+    min-inline-size: 0;
+    flex: 1;
+  }
+
+  &__radio {
+    inline-size: ptrm(20);
+    block-size: ptrm(20);
+    flex-shrink: 0;
+    border: ptrm(1) solid var(--color-main);
+    border-radius: 50%;
+    appearance: none;
+    background-color: transparent;
+    @include trns;
+
+    &:checked {
+      background-color: var(--color-main);
+      box-shadow: inset 0 0 0 ptrm(4) var(--color-background-secondary);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: ptrm(24) ptrm(40);
+  }
+
+  &__consent {
+    min-inline-size: 0;
+    display: flex;
+    flex: 1 1 ptrm(480);
+    gap: ptrm(10);
+    align-items: flex-start;
+    cursor: pointer;
+  }
+
+  &__consent-text {
+    color: var(--color-muted);
+    font-size: ptrm(16);
+  }
+
+  &__terms-button {
+    color: var(--color-text);
+    display: inline;
+    text-decoration: underline;
+    text-underline-offset: ptrm(3);
+    text-align: start;
+    @include trns;
+    transition-property: color, text-decoration-color;
+
+    @include hover {
+      color: var(--color-focus);
+      text-decoration-color: transparent;
+    }
+
+    &:active {
+      color: var(--color-main);
+      text-decoration-color: currentColor;
+    }
+  }
+
+  &__status {
+    color: var(--color-muted);
+    font-size: ptrm(14);
+  }
+
+  &__submit-button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  &--contacts &__field {
+    flex-basis: calc((100% - ptrm(60)) / 3);
+  }
+
+  &--apartment &__field {
+    flex-basis: calc((100% - ptrm(30)) / 2);
+  }
+
+  @include laptop {
+    padding-block: ptrm(60);
+    padding-inline: ptrm(60);
+    gap: ptrm(40);
+
+    &__fields {
+      gap: ptrm(24);
+    }
+
+    &__field {
+      flex-basis: calc((100% - ptrm(72)) / 4);
+
+      &--wide {
+        flex-basis: calc((100% - ptrm(24)) / 2);
+      }
+    }
+
+    &--contacts &__field {
+      flex-basis: calc((100% - ptrm(48)) / 3);
+    }
+  }
+
+  @include tablet {
+    padding-block: ptrm(40);
+    padding-inline: ptrm(40);
+
+    &__field,
+    &--contacts &__field {
+      flex-basis: calc((100% - ptrm(24)) / 2);
+    }
+
+    &__actions {
+      gap: ptrm(24);
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__consent {
+      flex: auto;
+    }
+
+    &__contact-method {
+      flex: auto;
+      flex-direction: column;
+      align-items: stretch;
+      gap: ptrm(12);
+    }
+  }
+
+  @include mobile {
+    padding-block: ptrm(24);
+    padding-inline: ptrm(20);
+    gap: ptrm(30);
+
+    &__legend {
+      padding-block-end: ptrm(20);
+      font-size: ptrm(18);
+    }
+
+    &__fields {
+      flex-direction: column;
+      gap: ptrm(20);
+    }
+
+    &__field,
+    &--contacts &__field,
+    &--apartment &__field {
+      flex: auto;
+    }
+
+    &__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__consent-text {
+      font-size: ptrm(14);
+    }
+  }
+}

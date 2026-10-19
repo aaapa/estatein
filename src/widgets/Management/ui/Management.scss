@@ -1,0 +1,148 @@
+.management {
+  padding-block-start: ptrm(150);
+  display: flex;
+  justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(761.4);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(80);
+    min-inline-size: 0;
+  }
+
+  &__heading {
+    max-inline-size: ptrm(1296);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(14);
+  }
+
+  &__stars {
+    position: absolute;
+    inset-block-start: ptrm(-40);
+    inset-inline-start: ptrm(-20);
+  }
+
+  &__description {
+    font-size: ptrm(18);
+    color: var(--color-muted);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: ptrm(30);
+  }
+
+  &__item {
+    flex: 0 0 calc((100% - ptrm(60)) / 3);
+    min-inline-size: 0;
+  }
+
+  &__offer {
+    min-inline-size: 0;
+    padding-block: ptrm(50);
+    padding-inline: ptrm(50);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: ptrm(30);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(12);
+    background: var(--color-background-secondary) url("/images/management/management-background.webp") center / cover;
+  }
+
+  &__offer-heading {
+    display: flex;
+    gap: ptrm(20);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include laptop {
+    padding-block-start: ptrm(120);
+    contain-intrinsic-size: auto ptrm(621.4);
+
+    &__inner {
+      gap: ptrm(60);
+    }
+
+    &__list {
+      gap: ptrm(20);
+    }
+
+    &__item {
+      flex-basis: calc((100% - ptrm(40)) / 3);
+    }
+
+    &__offer {
+      padding-block: ptrm(40);
+      padding-inline: ptrm(40);
+      gap: ptrm(20);
+    }
+
+    &__description {
+      font-size: ptrm(16);
+    }
+  }
+
+  @include tablet {
+    contain-intrinsic-size: auto ptrm(855);
+
+    &__item {
+      flex-basis: calc((100% - ptrm(20)) / 2);
+    }
+
+    &__offer {
+      flex-basis: 100%;
+    }
+  }
+
+  @include mobile {
+    padding-block-start: ptrm(80);
+    contain-intrinsic-size: auto ptrm(1180.4);
+
+    &__inner {
+      gap: ptrm(40);
+    }
+
+    &__heading {
+      gap: ptrm(8);
+    }
+
+    &__stars {
+      inset-block-start: ptrm(-28);
+      inset-inline-start: ptrm(-10);
+      zoom: 0.67;
+    }
+
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      flex-basis: auto;
+    }
+
+    &__offer {
+      padding-block: ptrm(24);
+      padding-inline: ptrm(24);
+    }
+
+    &__offer-heading {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    &__description {
+      font-size: ptrm(14);
+    }
+  }
+
+  @include mobile-s {
+    contain-intrinsic-size: auto ptrm(1312.4);
+  }
+}

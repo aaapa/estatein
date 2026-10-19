@@ -1,0 +1,36 @@
+@use "@/shared/lib/styles" as *;
+
+.title {
+  color: var(--color-text);
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+
+  &--big {
+    font-size: ptrm(48);
+
+    @include laptop {
+      font-size: ptrm(38);
+    }
+
+    @include tablet {
+      font-size: ptrm(32);
+    }
+
+    @include mobile {
+      font-size: ptrm(28);
+    }
+  }
+
+  &--small {
+    font-size: ptrm(24);
+
+    @include laptop {
+      font-size: ptrm(20);
+    }
+
+    @include mobile {
+      font-size: ptrm(18);
+    }
+  }
+}

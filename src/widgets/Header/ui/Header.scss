@@ -1,0 +1,221 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 90;
+  border-block-end: ptrm(1) solid var(--color-border);
+  background-color: var(--color-background-secondary);
+
+  &__announcement {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-block-end: ptrm(1) solid var(--color-border);
+    background: url("/images/header/header-background.svg") center / cover var(--color-background-secondary);
+  }
+
+  &__announcement-inner {
+    min-height: ptrm(63);
+    padding-block: ptrm(17);
+    display: flex;
+    gap: ptrm(16);
+    align-items: center;
+
+    @include laptop {
+      min-height: ptrm(49);
+      padding-block: ptrm(8);
+    }
+
+    @include mobile {
+      min-height: ptrm(78);
+      padding-block: ptrm(16);
+      gap: ptrm(8);
+    }
+  }
+
+  &__announcement-text {
+    min-inline-size: 0;
+    flex: 1;
+    text-align: center;
+
+    @include laptop {
+      font-size: ptrm(14);
+    }
+
+    @include mobile {
+      font-size: ptrm(12);
+    }
+  }
+
+  &__announcement-link {
+    display: inline-block;
+    text-decoration: underline;
+    text-underline-offset: ptrm(3);
+    @include trns;
+
+    @include hover {
+      color: var(--color-focus);
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__close-button {
+    flex-shrink: 0;
+    width: ptrm(32);
+    height: ptrm(32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    @include trns;
+    background-color: alpha(#fff, 0.1);
+
+    @include hover {
+      background-color: alpha(#fff, 0.2);
+    }
+
+    &:active {
+      background-color: var(--color-main);
+    }
+
+    @include mobile {
+      width: ptrm(28);
+      height: ptrm(28);
+    }
+  }
+
+  &__inner {
+    position: relative;
+    min-height: ptrm(98);
+    display: flex;
+    gap: ptrm(30);
+    align-items: center;
+    justify-content: space-between;
+
+    > .button {
+      flex-shrink: 0;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    @include laptop {
+      min-height: ptrm(77);
+      gap: ptrm(20);
+    }
+
+    @include tablet {
+      gap: ptrm(12);
+    }
+
+    @include mobile {
+      min-height: ptrm(68);
+    }
+  }
+
+  &__menu {
+    @include mobile {
+      position: fixed;
+      inset-block-end: 0;
+      inset-inline: 0;
+      padding-block: ptrm(24);
+      padding-inline: var(--container-padding);
+      visibility: hidden;
+      opacity: 0;
+      translate: -100% 0;
+      transition:
+        translate 300ms ease,
+        opacity 300ms ease,
+        visibility 0s 300ms;
+      border-block-start: ptrm(1) solid var(--color-border);
+      background-color: var(--color-background-secondary);
+
+      &--open {
+        visibility: visible;
+        opacity: 1;
+        translate: 0;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__menu-inner {
+    @include mobile {
+      block-size: 100%;
+    }
+  }
+
+  &__nav {
+    @include mobile {
+      inline-size: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: ptrm(6);
+    align-items: center;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__item {
+    &--contact {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    padding-block: ptrm(14);
+    padding-inline: ptrm(22);
+    display: block;
+    border: ptrm(1) solid transparent;
+    border-radius: ptrm(10);
+    white-space: nowrap;
+    @include trns;
+
+    @include hover {
+      color: var(--color-focus);
+      background-color: var(--color-page);
+    }
+
+    &:active {
+      background-color: #292033;
+    }
+
+    &--active {
+      border-color: var(--color-border);
+      background-color: var(--color-page);
+    }
+
+    @include laptop {
+      padding-block: ptrm(12);
+      padding-inline: ptrm(15);
+      font-size: ptrm(14);
+    }
+
+    @include tablet {
+      padding-inline: ptrm(10);
+    }
+  }
+
+  @include reduced-motion {
+    &__menu {
+      transition: none;
+    }
+  }
+}

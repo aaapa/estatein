@@ -1,0 +1,44 @@
+.questions-card {
+  padding-block: ptrm(50);
+  padding-inline: ptrm(50);
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(30);
+  align-items: flex-start;
+  border: ptrm(1) solid var(--color-border);
+  border-radius: ptrm(12);
+
+  &__title {
+    min-height: 3em;
+  }
+
+  &__description {
+    color: var(--color-muted);
+    flex: 1;
+  }
+
+  &__answer {
+    padding-block-start: ptrm(20);
+    border-block-start: ptrm(1) solid var(--color-border);
+  }
+
+  @include laptop {
+    padding-block: ptrm(40);
+    padding-inline: ptrm(40);
+    gap: ptrm(24);
+  }
+
+  @include mobile {
+    padding-block: ptrm(30);
+    padding-inline: ptrm(30);
+    gap: ptrm(20);
+
+    &__title {
+      min-height: auto;
+    }
+
+    &__read-button {
+      width: 100%;
+    }
+  }
+}

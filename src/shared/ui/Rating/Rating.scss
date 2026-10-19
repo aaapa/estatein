@@ -1,0 +1,51 @@
+.rating {
+  &__list {
+    display: flex;
+    gap: ptrm(10);
+
+    @include mobile {
+      gap: ptrm(8);
+    }
+  }
+
+  &__item {
+    color: var(--color-muted);
+    inline-size: ptrm(44);
+    block-size: ptrm(44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: ptrm(1) solid var(--color-border);
+    border-radius: 50%;
+    background-color: var(--color-background-secondary);
+
+    &--filled {
+      color: var(--color-yellow);
+    }
+
+    @include laptop {
+      inline-size: ptrm(36);
+      block-size: ptrm(36);
+    }
+
+    @include mobile {
+      inline-size: ptrm(30);
+      block-size: ptrm(30);
+    }
+  }
+
+  &__icon {
+    inline-size: ptrm(24);
+    block-size: ptrm(24);
+
+    @include laptop {
+      inline-size: ptrm(20);
+      block-size: ptrm(20);
+    }
+
+    @include mobile {
+      inline-size: ptrm(16);
+      block-size: ptrm(16);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.page-heading {
+  padding-block: ptrm(150) ptrm(100);
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(115deg, #262626 0%, #141414 55%);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(14);
+  }
+
+  &__description {
+    font-size: ptrm(18);
+    color: var(--color-muted);
+    max-inline-size: ptrm(1358);
+  }
+
+  @include laptop {
+    padding-block: ptrm(100) ptrm(70);
+
+    &__description {
+      font-size: ptrm(16);
+    }
+  }
+
+  @include mobile {
+    padding-block: ptrm(50);
+
+    &__inner {
+      gap: ptrm(10);
+    }
+
+    &__description {
+      font-size: ptrm(14);
+    }
+  }
+}

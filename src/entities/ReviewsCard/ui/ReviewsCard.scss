@@ -1,0 +1,70 @@
+.reviews-card {
+  padding-block: ptrm(50);
+  padding-inline: ptrm(50);
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(30);
+  border: ptrm(1) solid var(--color-border);
+  border-radius: ptrm(12);
+
+  &__information {
+    min-width: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: ptrm(14);
+  }
+
+  &__client {
+    display: flex;
+    gap: ptrm(12);
+    align-items: center;
+  }
+
+  &__image {
+    width: ptrm(60);
+    height: ptrm(60);
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__client-information {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(2);
+  }
+
+  &__client-name {
+    font-size: ptrm(20);
+  }
+
+  &__client-location {
+    color: var(--color-muted);
+  }
+
+  @include laptop {
+    padding-block: ptrm(40);
+    padding-inline: ptrm(40);
+    gap: ptrm(24);
+
+    &__image {
+      width: ptrm(50);
+      height: ptrm(50);
+    }
+
+    &__client-name {
+      font-size: ptrm(18);
+    }
+  }
+
+  @include mobile {
+    padding-block: ptrm(30);
+    padding-inline: ptrm(30);
+    gap: ptrm(24);
+
+    &__client-name {
+      font-size: ptrm(16);
+    }
+  }
+}

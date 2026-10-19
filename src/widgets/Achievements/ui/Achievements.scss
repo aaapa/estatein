@@ -1,0 +1,130 @@
+.achievements {
+  padding-block-start: ptrm(150);
+  display: flex;
+  justify-content: center;
+  content-visibility: auto;
+  contain-intrinsic-size: auto ptrm(504.6);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(80);
+
+    @include laptop {
+      gap: ptrm(60);
+    }
+
+    @include mobile {
+      gap: ptrm(40);
+    }
+  }
+
+  &__heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(14);
+    padding-inline-end: ptrm(300);
+
+    @include laptop {
+      gap: ptrm(10);
+    }
+
+    @include mobile {
+      gap: ptrm(8);
+    }
+  }
+
+  &__stars {
+    position: absolute;
+    inset-block-start: ptrm(-40);
+    inset-inline-start: ptrm(-20);
+
+    @include laptop {
+      zoom: 0.8;
+    }
+
+    @include mobile {
+      inset-block-start: ptrm(-28);
+      inset-inline-start: ptrm(-10);
+      zoom: 0.67;
+    }
+  }
+
+  &__description {
+    color: var(--color-muted);
+  }
+
+  &__list {
+    display: flex;
+    gap: ptrm(40);
+    align-items: stretch;
+  }
+
+  &__item {
+    min-inline-size: 0;
+    padding-block: ptrm(50);
+    padding-inline: ptrm(50);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: ptrm(30);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(12);
+    box-shadow: 0 0 0 ptrm(8) #191919;
+  }
+
+  @include laptop {
+    padding-block-start: ptrm(120);
+    contain-intrinsic-size: auto ptrm(392.6);
+
+    &__heading {
+      padding-inline-end: ptrm(150);
+    }
+
+    &__list {
+      gap: ptrm(30);
+    }
+
+    &__item {
+      padding-block: ptrm(30);
+      padding-inline: ptrm(30);
+      gap: ptrm(24);
+      box-shadow: 0 0 0 ptrm(6) #191919;
+    }
+  }
+
+  @include tablet {
+    contain-intrinsic-size: auto ptrm(575.6);
+
+    &__heading {
+      padding-inline-end: 0;
+    }
+
+    &__item {
+      padding-block: ptrm(24);
+      padding-inline: ptrm(24);
+    }
+  }
+
+  @include mobile {
+    padding-block-start: ptrm(80);
+    contain-intrinsic-size: auto ptrm(785.8);
+
+    &__list {
+      flex-direction: column;
+      gap: ptrm(20);
+    }
+
+    &__item {
+      padding-block: ptrm(30);
+      padding-inline: ptrm(30);
+      gap: ptrm(16);
+      box-shadow: 0 0 0 ptrm(4) #191919;
+    }
+  }
+
+  @include mobile-s {
+    contain-intrinsic-size: auto ptrm(848.8);
+  }
+}

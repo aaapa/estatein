@@ -1,0 +1,18 @@
+.tippy-box {
+  color: var(--color-text);
+  border: ptrm(1) solid var(--color-border);
+  border-radius: ptrm(8);
+  font-family: "Urbanist", sans-serif;
+  font-size: ptrm(13);
+  box-shadow: 0 ptrm(4) ptrm(18) #0005;
+  background-color: var(--color-background-secondary);
+}
+
+.tippy-content {
+  padding-block: ptrm(7);
+  padding-inline: ptrm(10);
+}
+
+.tippy-arrow {
+  color: var(--color-background-secondary);
+}

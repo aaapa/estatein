@@ -1,0 +1,162 @@
+.clients-card {
+  min-inline-size: 0;
+  padding-block: ptrm(50);
+  padding-inline: ptrm(50);
+  display: flex;
+  flex-direction: column;
+  gap: ptrm(40);
+  border: ptrm(1) solid var(--color-border);
+  border-radius: ptrm(12);
+  box-shadow: 0 0 0 ptrm(8) #191919;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: ptrm(30);
+  }
+
+  &__information {
+    min-inline-size: 0;
+    display: flex;
+    flex-direction: column;
+    gap: ptrm(6);
+  }
+
+  &__year {
+    color: var(--color-muted);
+  }
+
+  &__details {
+    display: flex;
+    gap: ptrm(30);
+  }
+
+  &__detail {
+    min-inline-size: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: ptrm(8);
+
+    & + & {
+      padding-inline-start: ptrm(30);
+      border-inline-start: ptrm(1) solid var(--color-border);
+    }
+  }
+
+  &__label {
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    gap: ptrm(6);
+  }
+
+  &__icon {
+    inline-size: ptrm(24);
+    block-size: ptrm(24);
+    flex-shrink: 0;
+  }
+
+  &__value {
+    font-size: ptrm(20);
+  }
+
+  &__review {
+    padding-block: ptrm(30);
+    padding-inline: ptrm(30);
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: ptrm(14);
+    border: ptrm(1) solid var(--color-border);
+    border-radius: ptrm(12);
+  }
+
+  &__review-title {
+    color: var(--color-muted);
+  }
+
+  @include laptop {
+    padding-block: ptrm(40);
+    padding-inline: ptrm(40);
+    gap: ptrm(30);
+    box-shadow: 0 0 0 ptrm(6) #191919;
+
+    &__header {
+      gap: ptrm(20);
+    }
+
+    &__details {
+      gap: ptrm(20);
+    }
+
+    &__detail + &__detail {
+      padding-inline-start: ptrm(20);
+    }
+
+    &__value {
+      font-size: ptrm(18);
+    }
+
+    &__review {
+      padding-block: ptrm(24);
+      padding-inline: ptrm(24);
+      gap: ptrm(10);
+    }
+  }
+
+  @include tablet {
+    padding-block: ptrm(24);
+    padding-inline: ptrm(24);
+
+    &__header {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    &__value {
+      font-size: ptrm(16);
+    }
+  }
+
+  @include mobile {
+    box-shadow: 0 0 0 ptrm(4) #191919;
+
+    &__information {
+      gap: ptrm(2);
+    }
+
+    &__details {
+      gap: ptrm(16);
+    }
+
+    &__detail {
+      gap: ptrm(4);
+    }
+
+    &__detail + &__detail {
+      padding-inline-start: ptrm(16);
+    }
+
+    &__label {
+      gap: ptrm(2);
+      font-size: ptrm(12);
+    }
+
+    &__icon {
+      inline-size: ptrm(18);
+      block-size: ptrm(18);
+    }
+
+    &__value {
+      font-size: ptrm(14);
+    }
+
+    &__review {
+      padding-block: ptrm(20);
+      padding-inline: ptrm(20);
+      gap: ptrm(8);
+    }
+  }
+}
